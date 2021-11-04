@@ -30,6 +30,7 @@ export default{
 .task{
     background: #f4f4f4;
     margin: 5px;
+    border-left: 5px solid red;
     padding: 10px 20px;
     cursor: pointer;
 }
@@ -38,6 +39,7 @@ export default{
     border-left: 5px solid green;
 
 }
+
 
 .task h3{
     display: flex;

@@ -1,13 +1,13 @@
 <template>
     <form @submit="onSubmit" class="add-form">
     <div class="form-control">
-    <label >Task</label>
-<input type="text" v-model="text" name="text" placeholder="Add Task"/>
+    <label >Program Name</label>
+<input type="text" v-model="text" name="text" placeholder="Add Program Name"/>
     </div>
 
 <div class="form-control">
-<label >Day & Time</label>
-<input type="text" v-model="day" name="day" placeholder="Add Day & Time"/>
+<label >Course Name</label>
+<input type="text" v-model="day" name="day" placeholder="Add Course Name"/>
 </div>
 
 <div class="form-control">

@@ -1,6 +1,6 @@
 <template>
 <div class="container">
-<Header  @toggle-add-task="toggleAddTask"  title="Trace Tacker" :showAddTask="showAddTask" />
+<Header  @toggle-add-task="toggleAddTask"  title="Online Course Program" :showAddTask="showAddTask" />
 <div v-show="showAddTask">
 <AddTask @add-task="addTask" />
 </div>
@@ -57,24 +57,7 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
   },
   created(){
     this.tasks=[
-  {
-    id: 1,
-    text: 'Doctors Appointment',
-    day: 'March 1st at 2:30pm',
-    reminder:true,
-  },
-    {
-    id: 2,
-    text: 'Meeting at School',
-    day: 'March 3rd at 1:30pm',
-    reminder:false,
-  },
-    {
-    id: 3,
-    text: 'Food Shopping',
-    day: 'March 2nd at 7:00pm',
-    reminder:true,
-  },
+ 
 
 
     ]
@@ -106,7 +89,7 @@ body{
 }
 .btn{
   display: inline-block;
-  background: rgb(156, 105, 105);
+  background: black;
   color: #fff;
   border: none;
   padding: 10px 20px;
