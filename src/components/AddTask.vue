@@ -14,6 +14,22 @@
 <label >Set Reminder</label>
 <input type="checkbox" v-model="reminder" name="reminder"/>
 </div>
+<div class="form-control1">
+<label >Choose Level</label>
+</div>
+
+<div class="radio-control">
+<input type="radio" name="beginner" value="beginner" v-model="picked">
+<label for="beginner">Beginner</label>
+
+<input type="radio" name="intermediate" value="Intermediate" v-model="picked">
+<label for="intermediate">Intermediate</label>
+
+<input type="radio" name="advanced" value="Advanced" v-model="picked">
+<label for="advanced">Advanced</label>
+
+</div>
+
 
 <input type="submit" value="Save Task" class="btn btn-block">
     </form>
@@ -93,6 +109,10 @@ methods:{
 .form-control-check input{
     flex: 2;
     height: 20px;
+
+}
+.radio-control{
+
 
 }
 </style>

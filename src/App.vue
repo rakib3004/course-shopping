@@ -1,6 +1,8 @@
 <template>
 <div class="container">
 <Header  @toggle-add-task="toggleAddTask"  title="Online Course Program" :showAddTask="showAddTask" />
+<ShowTasks  />
+
 <div v-show="showAddTask">
 <AddTask @add-task="addTask" />
 </div>
@@ -15,6 +17,9 @@ import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
 
+import ShowTasks from './components/ShowTasks'
+
+
 
 
 export default {
@@ -23,6 +28,7 @@ export default {
     Header, 
     Tasks,
     AddTask,
+    ShowTasks,
   },
 
   methods:{
