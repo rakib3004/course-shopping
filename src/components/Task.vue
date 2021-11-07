@@ -6,6 +6,7 @@
         </h3>
         
         <p>{{task.day}}</p>
+        <p style="color:dodgerblue">{{task.level}}</p>
 
     </div>
     </header>
