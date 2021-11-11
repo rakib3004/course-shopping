@@ -6,6 +6,8 @@
         </h3>
         
         <p>{{task.day}}</p>
+        <p @click="$emit('enroll-task',task)" class="fas-enroll">Enroll</p>
+
         <p style="color:dodgerblue">{{task.level}}</p>
 
     </div>
@@ -27,6 +29,13 @@ export default{
 
 .fas{
     color: red;
+margin-right: -1px;
+}
+.fas-enroll{
+    color: black;
+    background-color: darkgreen;
+    padding: 6px;
+   margin-right: -1px;
 }
 .task{
     background: #f4f4f4;

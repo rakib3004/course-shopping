@@ -19,6 +19,6 @@ export default {
 .doneList{
     background-color: darkgrey ;
     width: 100%;
-    height: 200px;
+    
 }
 </style>

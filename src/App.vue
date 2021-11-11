@@ -7,7 +7,7 @@
 <AddTask @add-task="addTask" />
 </div>
 
-<Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
+<Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :tasks="tasks" />
 
  </div>
 </template>
@@ -44,6 +44,10 @@ this.tasks = this.tasks.filter((task)=>
       }
    
     },
+    enrollTask(enrolledTasks){
+this.enrolledTasks = [...this.enrolledTasks,enrolledTasks]
+
+    },
      toggleAddTask(){
       this.showAddTask=!this.showAddTask
     },
@@ -57,6 +61,7 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
   data(){
     return{
       tasks: [],
+      enrolledTasks: [],
       showAddTask: false,
     }
   },
@@ -64,6 +69,9 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
     this.tasks=[
  
 
+
+    ],
+    this.enrolledTasks= [
 
     ]
   }
