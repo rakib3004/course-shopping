@@ -1,13 +1,13 @@
 <template>
 <div class="container">
 <Header  @toggle-add-task="toggleAddTask"  title="Online Course Program" :showAddTask="showAddTask" />
-<ShowTasks  />
+<ShowTasks :tasks="tasks" />
 
 <div v-show="showAddTask">
 <AddTask @add-task="addTask" />
 </div>
 
-<Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :tasks="tasks" />
+<Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :enrolledTasks="enrolledTasks" />
 
  </div>
 </template>

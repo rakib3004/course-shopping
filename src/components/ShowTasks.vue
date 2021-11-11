@@ -1,18 +1,27 @@
 <template>
 <header>
-<div class="doneList">
-</div>
+    <div :key="task.id" v-for="task in tasks">
+    <EnrollTask :task="task" />
+    </div>
     </header>
 </template>
 
 <script>
+import EnrollTask from './EnrollTask'
 
 
 export default {
-  name: 'ShowTasks',
-
-
+ name: 'ShowTasks',
+   props:{
+      enrolledTasks: Array,
+  },
+  components:{
+      EnrollTask,
+  },
+ 
 }
+
+
 </script>
 
 <style scoped>
@@ -22,3 +31,6 @@ export default {
     
 }
 </style>
+
+
+

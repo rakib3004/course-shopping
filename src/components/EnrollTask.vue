@@ -2,14 +2,12 @@
     <header>
     <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder': '', 'task']">
         <h3>{{task.text}}
-        <i @click="$emit('delete-task',task.id)" class="fas fa-times">X</i>
+       
         </h3>
         
         <p>{{task.day}}</p>
         
-
         <p style="color:dodgerblue">{{task.level}}</p>
-<p @click="$emit('enroll-task',task)" class="fas-enroll">Enroll</p>
     </div>
     </header>
 </template>
