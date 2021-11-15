@@ -1,5 +1,6 @@
 <template>
     <header>
+  <!-- <div :class="[task.isEnrolled ? 'task': 'enrolled-task', 'task']"  >  -->
     <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder': '', 'task']">
         <h3>{{task.programName}}
         <i @click="$emit('delete-task',task.id)" class="fas fa-times">X</i>
@@ -12,7 +13,7 @@
 <!--<input type="submit" @click="$emit('enroll-task',task.id)" value="Enroll" class="btn btn-enroll">-->
  <Enrollment @btn-click="$emit('enroll-task',task.id)" :text="task.isEnrolled? 'Unenroll' : 'Enroll'" :color="task.isEnrolled? 'red' : 'green'"  />
 
-
+<!--</div>-->
     </div>
     </header>
 </template>
@@ -47,7 +48,13 @@ margin-right: -1px;
 }
 
 .task{
-    background: #f4f4f4;
+    background:#f4f4f4;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.enrolled-task{
+     background:aqua;
     margin: 5px;
     padding: 10px 20px;
     cursor: pointer;
