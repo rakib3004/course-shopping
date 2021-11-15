@@ -1,13 +1,13 @@
 <template>
 <div class="container">
 <Header  @toggle-add-task="toggleAddTask"  title="Online Course Program" :showAddTask="showAddTask" />
-<ShowTasks :tasks="tasks" />
+<!--<ShowTasks :tasks="tasks" />-->
 
 <div v-show="showAddTask">
 <AddTask @add-task="addTask" />
 </div>
 
-<Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :enrolledTasks="enrolledTasks" />
+<Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask"  :tasks="tasks"/>
 
  </div>
 </template>
@@ -16,7 +16,7 @@
 import Header from './components/Header'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask'
-import ShowTasks from './components/ShowTasks'
+/*import ShowTasks from './components/ShowTasks'*/
 
 
 
@@ -27,7 +27,7 @@ export default {
     Header, 
     Tasks,
     AddTask,
-    ShowTasks,
+    /*ShowTasks,*/
   },
 
   methods:{
@@ -64,8 +64,33 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
     }
   },
   created(){
-    this.tasks=[
- 
+    this.tasks=[{
+            id: 1,
+            programName: 'Udemy',
+            courseName: 'Latex Basics',
+            courseLevel: 'Beginner',
+            reminder:true,
+            isEnrolled:false,
+    },
+    {
+            id: 2,
+            programName: 'Coursera',
+            courseName: 'Operating System',
+            courseLevel: 'Beginner',
+            reminder:false,
+            isEnrolled:false,
+
+    },
+    {
+            id: 3,
+            programName: '10 Minutes School',
+            courseName: 'Communication Skills',
+            courseLevel: 'Intermediate',
+            reminder:true,
+            isEnrolled:false,
+    },
+
+
     ]    
   }
 }

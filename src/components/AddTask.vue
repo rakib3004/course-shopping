@@ -2,12 +2,12 @@
     <form @submit="onSubmit" class="add-form">
     <div class="form-control">
     <label >Program Name</label>
-<input type="text" v-model="text" name="text" placeholder="Add Program Name"/>
+<input type="text" v-model="programName" name="programName" placeholder="Add Program Name"/>
     </div>
 
 <div class="form-control">
 <label >Course Name</label>
-<input type="text" v-model="day" name="day" placeholder="Add Course Name"/>
+<input type="text" v-model="courseName" name="courseName" placeholder="Add Course Name"/>
 </div>
 
 <div class="reminder-control">
@@ -43,9 +43,9 @@ export default{
 name: 'AddTask',
 data(){
     return{
-        text: '',
-        day: '',
-        level:'',
+        programName: '',
+        courseName: '',
+        courseLevel:'',
         isEnrolled:false,
         reminder: false,
     }
@@ -54,25 +54,25 @@ methods:{
     onSubmit(e){
         e.preventDefault()
 
-        if(!this.text){
+        if(!this.programName){
             alert('Please add a task')
             return
         }
         const newTask={
            
             id: Math.floor(Math.random()*100000),
-            text: this.text,
-            day: this.day,
-            level: this.level,
+            programName: this.programName,
+            courseName: this.courseName,
+            courseLevel: this.level,
             reminder:this.reminder,
             isEnrolled:this.isEnrolled,
         }
         console.log('Add a tasks');
         this.$emit('add-task', newTask)
 
-        this.text=''
-        this.day=''
-        this.level=''
+        this.programName=''
+        this.courseName=''
+        this.courseLevel=''
         this.reminder=false
         this.isEnrolled=false
 

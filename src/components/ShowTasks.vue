@@ -13,7 +13,6 @@ import EnrollTask from './EnrollTask'
 export default {
  name: 'ShowTasks',
    props:{
-      enrolledTasks: Array,
   },
   components:{
       EnrollTask,
