@@ -1,13 +1,13 @@
 <template>
 <div class="container">
 <Header  @toggle-add-task="toggleAddTask"  title="Online Course Program" :showAddTask="showAddTask" />
-<ShowTasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :tasks="tasks" />
 
 <div v-show="showAddTask">
 <AddTask @add-task="addTask" />
 </div>
 
 <Tasks  @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask"  :tasks="tasks"/>
+<ShowTasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :tasks="tasks" />
 
  </div>
 </template>
@@ -89,6 +89,7 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
             reminder:true,
             isEnrolled:false,
     },
+     
 
 
     ]    
@@ -147,5 +148,9 @@ body{
 }
 .btn-enroll{
     width: 100%;
+}
+.enroll-section{
+  
+  text-align: center;
 }
 </style>

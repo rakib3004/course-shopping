@@ -1,13 +1,13 @@
 <template>
     <header>
     <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder': '', 'task']">
-        <h3>{{task.text}}
+        <h3>{{task.programName}}
        
         </h3>
         
-        <p>{{task.day}}</p>
+        <p>{{task.courseName}}</p>
         
-        <p style="color:dodgerblue">{{task.level}}</p>
+        <p style="color:dodgerblue">{{task.courseLevel}}</p>
     </div>
     </header>
 </template>

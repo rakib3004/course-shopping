@@ -49,7 +49,6 @@ margin-right: -1px;
 .task{
     background: #f4f4f4;
     margin: 5px;
-    border-left: 5px solid red;
     padding: 10px 20px;
     cursor: pointer;
 }
