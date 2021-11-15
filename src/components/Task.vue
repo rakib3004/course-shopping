@@ -1,16 +1,15 @@
 <template>
     <header>
     <div @dblclick="$emit('toggle-reminder', task.id)" :class="[task.reminder ? 'reminder': '', 'task']">
-        <h3>{{task.text}}
+        <h3>{{task.programName}}
         <i @click="$emit('delete-task',task.id)" class="fas fa-times">X</i>
         </h3>
         
-        <p>{{task.day}}</p>
+        <p>{{task.courseName}}</p>
         
 
-        <p style="color:dodgerblue">{{task.level}}</p>
-<p @click="$emit('enroll-task',task)" class="fas-enroll">Enroll</p>
-<input type="submit" @click="$emit('enroll-task',task.id)" value="Enroll" class="btn btn-block">
+        <p style="color:dodgerblue">{{task.courseLevel}}</p>
+<input type="submit" @click="$emit('enroll-task',task.id)" value="Enroll" class="btn btn-enroll">
 
     </div>
     </header>
@@ -40,12 +39,24 @@ export default{
     color: red;
 margin-right: -1px;
 }
-.fas-enroll{
+.btn-enroll{
     color: black;
-    background-color: darkgreen;
+    background: darkgreen;
     padding: 6px;
    margin-right: -1px;
    text-align: center;
+     display: block;
+  width: 100%;
+  display: inline-block;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
 }
 .task{
     background: #f4f4f4;

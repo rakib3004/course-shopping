@@ -1,35 +1,25 @@
 <template>
 <header>
-  <div :key="task.id" v-for="task in enrolledTasks">
-    <EnrollTask :task="task" />
+    <h1>Enrolling Courses: </h1>
+    <div :key="task.id" v-for="task in tasks">
+    <Task @toggle-reminder="$emit('toggle-reminder', task.id)" @enroll-task="$emit('enroll-task', task.id)" @delete-task="$emit('delete-task',
+     task)"  :task="task" />
     </div>
     </header>
 </template>
 
 <script>
-import EnrollTask from './EnrollTask'
+import Task from './Task'
 
 
 export default {
- name: 'ShowTasks',
-   props:{
+  name: 'Tasks',
+  props:{
+      tasks: Array,
   },
   components:{
-      EnrollTask,
+      Task,
   },
- 
+  emits: ['delete-task','enroll-task', 'toggle-reminder'],
 }
-
-
 </script>
-
-<style scoped>
-.doneList{
-    background-color: darkgrey ;
-    width: 100%;
-    
-}
-</style>
-
-
-
