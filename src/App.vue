@@ -1,7 +1,7 @@
 <template>
 <div class="container">
 <Header  @toggle-add-task="toggleAddTask"  title="Online Course Program" :showAddTask="showAddTask" />
-<ShowTasks :tasks="tasks" />
+<ShowTasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" @enroll-task="enrollTask" :tasks="tasks" />
 
 <div v-show="showAddTask">
 <AddTask @add-task="addTask" />
@@ -70,7 +70,7 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
             courseName: 'Latex Basics',
             courseLevel: 'Beginner',
             reminder:true,
-            isEnrolled:false,
+            isEnrolled:true,
     },
     {
             id: 2,
@@ -78,7 +78,7 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
             courseName: 'Operating System',
             courseLevel: 'Beginner',
             reminder:false,
-            isEnrolled:false,
+            isEnrolled:true,
 
     },
     {
