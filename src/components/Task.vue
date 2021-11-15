@@ -9,19 +9,25 @@
         
 
         <p style="color:dodgerblue">{{task.courseLevel}}</p>
-<input type="submit" @click="$emit('enroll-task',task.id)" value="Enroll" class="btn btn-enroll">
+<!--<input type="submit" @click="$emit('enroll-task',task.id)" value="Enroll" class="btn btn-enroll">-->
+ <Enrollment @btn-click="$emit('enroll-task',task.id)" :text="task.isEnrolled? 'Unenroll' : 'Enroll'" :color="task.isEnrolled? 'red' : 'green'"  />
+
 
     </div>
     </header>
 </template>
 
 <script>
+import Enrollment from './Enrollment.vue'
 
 export default{
     name: 'Task',
     props:{
         task: Object,
     },
+    components:{
+        Enrollment,
+    }
  /*  methods:{
  onSubmit(e){
         e.preventDefault()
@@ -39,25 +45,7 @@ export default{
     color: red;
 margin-right: -1px;
 }
-.btn-enroll{
-    color: black;
-    background: darkgreen;
-    padding: 6px;
-   margin-right: -1px;
-   text-align: center;
-     display: block;
-  width: 100%;
-  display: inline-block;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
+
 .task{
     background: #f4f4f4;
     margin: 5px;

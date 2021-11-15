@@ -15,7 +15,7 @@
 <script>
 
 export default{
-    name: 'Task',
+    name: 'EnrollTask',
     props:{
         task: Object,
     },

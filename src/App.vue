@@ -145,4 +145,7 @@ body{
   display: block;
   width: 100%;
 }
+.btn-enroll{
+    width: 100%;
+}
 </style>
