@@ -10,6 +10,8 @@
 
         <p style="color:dodgerblue">{{task.level}}</p>
 <p @click="$emit('enroll-task',task)" class="fas-enroll">Enroll</p>
+<input type="submit" @click="$emit('enroll-task',task.id)" value="Enroll" class="btn btn-block">
+
     </div>
     </header>
 </template>
@@ -21,7 +23,14 @@ export default{
     props:{
         task: Object,
     },
-   
+ /*  methods:{
+ onSubmit(e){
+        e.preventDefault()
+
+     this.$emit('enroll-task', this.task)
+        
+    },
+   },*/
 }
 </script>
 

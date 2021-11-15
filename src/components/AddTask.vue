@@ -46,6 +46,7 @@ data(){
         text: '',
         day: '',
         level:'',
+        isEnrolled:false,
         reminder: false,
     }
 },
@@ -58,21 +59,24 @@ methods:{
             return
         }
         const newTask={
+           
             id: Math.floor(Math.random()*100000),
             text: this.text,
             day: this.day,
             level: this.level,
             reminder:this.reminder,
+            isEnrolled:this.isEnrolled,
         }
+        console.log('Add a tasks');
         this.$emit('add-task', newTask)
 
         this.text=''
         this.day=''
         this.level=''
         this.reminder=false
-        
-    },
+        this.isEnrolled=false
 
+    },
 }
 
 }

@@ -44,10 +44,9 @@ this.tasks = this.tasks.filter((task)=>
       }
    
     },
-    enrollTask(enrolledTasks){
-this.enrolledTasks = [...this.enrolledTasks,enrolledTasks]
-
-    },
+    enrollTask(id){
+this.tasks = this.tasks.map((task) => task.id===id? {...task, isEnrolled: !task.isEnrolled}: task
+ ) },
      toggleAddTask(){
       this.showAddTask=!this.showAddTask
     },
@@ -61,19 +60,13 @@ this.tasks = this.tasks.map((task) => task.id===id? {...task, reminder: !task.re
   data(){
     return{
       tasks: [],
-      enrolledTasks: [],
       showAddTask: false,
     }
   },
   created(){
     this.tasks=[
  
-
-
-    ],
-    this.enrolledTasks= [
-
-    ]
+    ]    
   }
 }
 </script>

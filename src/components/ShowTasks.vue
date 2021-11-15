@@ -1,6 +1,6 @@
 <template>
 <header>
-    <div :key="task.id" v-for="task in tasks">
+  <div :key="task.id" v-for="task in enrolledTasks">
     <EnrollTask :task="task" />
     </div>
     </header>
