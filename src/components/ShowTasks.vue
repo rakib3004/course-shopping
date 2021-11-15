@@ -1,6 +1,6 @@
 <template>
 <header>
-    <h1 class="enroll-section">Enrolling Courses: </h1>
+    <h1 class="enroll-section">Enrolled Courses: </h1>
     <div :key="task.id" v-for="task in tasks">
     <div v-if="task.isEnrolled==true">
     <Task @toggle-reminder="$emit('toggle-reminder', task.id)" @enroll-task="$emit('enroll-task', task.id)" @delete-task="$emit('delete-task',
