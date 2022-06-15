@@ -1,3 +1,4 @@
+const lodash = require('lodash')
 const subject = require('./index');
 
-console.log(subject)
+console.log(lodash.last(subject.bio_science))
