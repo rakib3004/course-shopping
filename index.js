@@ -1,3 +1,4 @@
-const array = require('lodash')
+const subject = ['software','electrical','mechanical','civil'];
 
-console.log(array.last([4,3,25,4,5,7]))
+
+module.exports=subject;
